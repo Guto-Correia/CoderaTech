@@ -1,0 +1,33 @@
+<!-- section contato -->
+        <section class="contato">
+            <div class="container">
+                
+                <div>
+                    <h2>ENTRE EM CONTATO CONOSCO</h2>
+                    <p>Pronto para destacar sua empresa nessa <span>era digital?</span></p>
+                    <p>Fale conosco e crie um site do jeitinho que sua marcar merece!</p>
+                </div>
+
+                <form method="POST">
+                    <div>
+                        <div>
+                            <label for="nome">Nome completo</label>
+                            <input id="nome" name="nome" type="text" autocomplete="name" required>
+                        </div>
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                    </div>
+                
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" name="telefone" type="tel" autocomplete="tel">
+                    
+                    <label for="motivo">Conte-nos um pouco sobre sua ideia</label>
+                    <textarea id="motivo" name="motivo" maxlength="1000" required></textarea>
+
+                    <button type="submit">ENVIAR</button>   
+                </form>
+                
+            </div>
+        </section>

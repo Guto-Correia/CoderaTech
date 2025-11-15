@@ -1,0 +1,1059 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Quantico:wght@400;700&display=swap');
+
+.quantico-regular {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quantico-bold {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+:root {
+    --font-principal: 'Quantico';
+    --font-menu: 'Montserrat';
+    --largura-maxima: 1500px;
+    --font-size: 16px
+}
+
+h2,h3,h4,h5,h6{
+    font-family: var(--font-principal);
+}
+
+a,p{
+    font-family: var(--font-menu);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*  CONTEUDO ACIMA É IMPORTANTISSIMO TER EM TODOS */
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: var(--largura-maxima);
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.topo {
+    background-color: #000000;
+    position: relative;
+    padding-block: 14px;
+}
+
+.topo ul {
+    display: flex;
+    gap: 40px;
+    /* as primeiras duas cores tem que ser as mesmas dos fundo do elemento,as duas finais são as da borda*/
+    background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
+        linear-gradient(to right, #4b57a0, #00c2ff) border-box;
+    border: 2px solid transparent;
+    /* declara que é transparente */
+    border-radius: 17px;
+    align-items: center;
+}
+
+.topo ul a {
+    font-family: var(--font-principal);
+    font-size: 25px;
+    color: #fbfbfb;
+    text-decoration: none;
+    display: block;
+    padding: 11.5px;
+    border-radius: 15px;
+}
+
+.topo ul a:hover {
+    color: #000000;
+    background-color: #9ddaef;
+}
+
+.topo ul .ativo{
+    color: #000000;
+    background-color: #9ddaef;
+}
+
+.topo #logo{
+    transform: translatex(-50%);
+    left: 50%;
+    position: absolute;
+}
+
+/* DEPOIS TENHO QUE CENTRALIZAR SEM O POSITION */
+.topo h1 {
+    text-indent: -9999px;
+    /* empurra o texto pra fora da tela */
+    background-image: url(../img/logo.svg);
+    height: 60px;
+    width: 300px;
+    background-repeat: no-repeat;
+}
+
+/* *******************     começo banner ********************************** */
+
+.banner {
+    padding-block: 50px;
+    background-color: #0f172a;
+    color: #fbfbfb;
+    overflow: hidden;
+}
+
+.banner h2 {
+    font-family: var(--font-principal);
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    margin: 60px 0 40px 0;
+}
+
+.banner h3 {
+    font-family: var(--font-principal);
+    font-size: 2.25em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* carrossel */
+.banner .carrossel {
+    padding: 0 10px 0 50px;
+}
+
+.banner .slick-slide{
+  opacity: 0.5;
+  transform: scale(0.85);
+  transition: all 0.7s ease;
+  margin: 10px 30px;
+}
+
+
+.banner .slick-center{
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.banner img {
+    background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
+        linear-gradient(to right, #d24e3d, #333333) border-box;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    display: block;
+  width: 100%;
+}
+
+/* setas do carrossel */
+.slick-prev:before,
+.slick-next:before {
+    font-size: 70px !important;
+    opacity: 0.7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.slick-prev:before {
+    content: "<";
+}
+
+.slick-next:before {
+    content: ">";
+}
+
+.slick-next {
+    right: 200px;
+    top: 45%;
+}
+
+.slick-prev {
+    left: 200px;
+    top: 45%;
+    z-index: 4;
+}
+
+
+/* *******************     começo projetos ********************************** */
+.projetos {
+    padding: 50px 0;
+    background-color: #0f172a;
+    color: #fbfbfb;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.projetos .container {
+    justify-content: center;
+    gap: 100px;
+}
+
+.projetos .container>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.projetos .container>div h2 {
+    font-family: var(--font-principal);
+    margin-bottom: 90px;
+    margin-top: 90px;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+.projetos .container div ul li a {
+    font-family: var(--font-menu);
+    background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
+    linear-gradient(to right, #d24e3d, #333333) border-box;
+    border: 4px solid transparent;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 15px 0;
+    font-size: 42px;
+    display: block;
+    color: #fbfbfb;
+
+    background-size: 400% 100%;
+    animation: borderColorShift 4s ease infinite;
+}
+
+.projetos .container div ul li a:hover {
+    color: #000000;
+    background: linear-gradient(to right, #9ddaef, #9ddaef) padding-box,
+    linear-gradient(to right, #d24e3d, #333333) border-box;
+    /* caaso o hover não seja em degrade,coloque as mesmas duas cores no padding-box */
+}
+
+@keyframes borderColorShift {
+  
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 75%;
+  }
+  75% {
+    background-position: 75% 100%;
+  }
+  100% {
+    background-position: 0% 25%;
+  }
+}
+
+.projetos .container .containerImg{
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 640px;
+  width: 640px;
+  overflow: hidden;
+}
+
+.projetos .container img {
+    background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
+        linear-gradient(to right , #d24e3d,#d24e3d, #333333) border-box;
+    border: 5px solid transparent;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+
+      background-size: 400% 100%;
+  animation: borderColorShift 4s ease infinite;
+  
+}
+
+@keyframes borderColorShift {
+  
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 75%;
+  }
+  75% {
+    background-position: 75% 100%;
+  }
+  100% {
+    background-position: 0% 25%;
+  }
+}
+
+.projetos .container img.fade {
+    opacity: 0;
+}
+
+
+
+/*****************************************************************************************                     COMEÇO QUEMSOMOS    *****************************************************************************************/
+
+.quemSomos {
+    background: #000033;
+    padding-block: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.quemSomos .container {
+    align-items: normal;
+}
+
+.quemSomos .img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.quemSomos img {
+    margin: 70px 0 30px 0;
+}
+
+.quemSomos .container .texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quemSomos .container .texto h2 {
+    font-family: var(--font-principal);
+    font-weight: bold;
+    font-size: 3.75em;
+    margin: 45px 0 60px 0;
+}
+
+.quemSomos .container .texto p {
+    font-size: 1.875em;
+    line-height: 1.4em;
+    text-indent: 40px;
+    text-align: center;
+    font-family: var(--font-menu);
+}
+
+.quemSomos .container .texto p:nth-child(3) {
+    margin-top: 40px;
+    text-indent: 0;
+}
+
+.quemSomos .container .texto a {
+    font-size: 36px;
+    color: #020816;
+    display: block;
+    padding: 12px 32px;
+    background: linear-gradient(to right, #9ddaef, #9ddaef) padding-box,
+        linear-gradient(to right, #cc6633, #ccff33) border-box;
+    border: 4px solid transparent;
+    border-radius: 15px;
+    font-family: var(--font-principal);
+    /* align-self: flex-start; */
+    margin-top: 100px;
+}
+
+.quemSomos .container .texto a:hover {
+    color: #ccff33;
+    background: linear-gradient(to right, #000033, #000033) padding-box,
+     linear-gradient(to right, #cc6633, #ccff33) border-box;
+}
+
+/* *******************     começo equipe ********************************** */
+
+
+.equipe {
+    background-color: #0f172a;
+    padding-block: 50px;
+}
+
+.equipe>div {
+    border-radius: 15px;
+    border: 5px solid transparent;
+    background: radial-gradient(#3140fc, #0f172a) padding-box,
+        linear-gradient(var(--angle), #3b82f6, #1e40af) border-box;
+    margin: 0 auto;
+    max-width: 1500px;
+    padding: 20px;
+}
+
+.equipe div>h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-family: var(--font-principal);
+}
+
+.equipe>div>h2:nth-child(2) {
+    margin-bottom: 70px;
+}
+
+.equipe>div>div {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.equipe div div .card {
+    border: 3px solid #0000;
+    background: linear-gradient(#5878f1, #230cff) padding-box,
+        linear-gradient(var(--angle), #cc6633, #ffda33) border-box;
+    animation: 4s rotate linear infinite;
+    border-radius: 15px;
+    width: 320px;
+    height: 410px;
+    position: relative;
+}
+
+.equipe .card>div:first-child {
+    margin-top: 20px;
+    justify-content: space-around;
+    display: flex;
+}
+
+.equipe .card>div>img {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
+        linear-gradient(to right, #fff, #020e3c) border-box;
+    border: 4px solid transparent;
+    border-radius: 50%;
+}
+
+.equipe .card h2 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #f8fafc;
+    margin: 10px 0px 20px 0px;
+}
+
+.equipe .card p {
+    font-size: 1.3em;
+    color: #c6cacf;
+    text-align: center;
+}
+
+.equipe .redes {
+    display: flex;
+    gap: 40px;
+    position: absolute;
+    bottom: 30px;
+    margin-inline: 45px;
+}
+
+.equipe .redes a img {
+    width: 50px;
+    height: 50px;
+}
+
+.equipe .redes a img:hover {
+    transform: scale(1.07);
+    background: #92a4f5;
+    border-radius: 25px;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+/* *******************     começo contato ********************************** */
+.contato {
+    background-color: #1f2937;
+    padding: 50px 0 70px 0;
+    color: #fbfbfb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contato .container {
+    gap: 50px;
+    align-items: start;
+}
+
+.contato .container>div {
+    text-align: center;
+    flex: 1;
+}
+
+.contato .container div h2 {
+    margin-block: 50px 70px;
+    font-size: 3.4375em;
+    font-family: var(--font-principal);
+}
+
+.contato .container div p {
+    margin-bottom: 40px;
+    font-size: 1.5625em;
+    font-weight: bold;
+}
+
+.contato .container div p span {
+    text-transform: uppercase;
+}
+
+/* formulario */
+/* arrumar a font e o tamanho dela */
+
+.contato .container form {
+    flex: 1;
+    background-color: #4B5863;
+    border-radius: 7px;
+    padding: 10px;
+    color: #fbfbfb;
+}
+
+.contato .container form>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contato .container form label {
+    display: block;
+    font-family: sans-serif;
+    /* Tem que arrumar todas as fontes*/
+    /* e padronizar os tamanhos de fontes,em todas as sections*/
+    font-size: 30px;
+    padding: 15px 0 20px 15px;
+    font-weight: 300;
+}
+
+.contato .container form input {
+    border-radius: 5px;
+    border: none;
+    height: 45px;
+    width: 340px;
+    background-color: #D9D1D1;
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contato .container form textarea {
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    height: 136px;
+    width: 698px;
+    background-color: #D9D1D1;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+}
+
+.contato .container form button {
+    display: block;
+    color: #FBFBFB;
+    background-color: #1F2937;
+    border-radius: 5px;
+    padding: 5px 60px;
+    font-size: 25px;
+    font-family: var(--font-principal);
+    margin-top: 15px;
+    border: 2px solid #5a8ea0;
+    transition: 0.3s;
+}
+
+.contato .container form button:hover {
+    color: #000;
+    background-color: #9ddaef;
+    border: 2px solid #1F2937;
+
+}
+
+
+/*****************************************************************************************                     COMEÇO FOOTER    *****************************************************************************************/
+
+footer {
+    background-color: #1F2937;
+    color: #fbfbfb;
+}
+
+footer .container {
+    gap: 10em;
+    justify-content: space-evenly;
+}
+
+
+footer .logo a {
+    display: block;
+    width: 250px;
+    height: 50px;
+}
+
+
+footer .nave {
+    padding-block: 25px;
+    text-align: center;
+}
+
+footer .nave ul {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+footer .nave a {
+    position: relative;
+    font-size: 1.5625em;
+    color: #fbfbfb;
+    font-family: sans-serif;
+}
+
+footer .nave a:hover {
+    color: #9ddaef;
+}
+
+footer .nave .ativo{
+    color: #9ddaef;
+}
+
+
+footer .nave a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0%;
+    height: 2px;
+    background: #9ddaef;
+    box-shadow: 0 0 10px #9ddaef;
+    transition: width 0.3s ease;
+}
+
+footer .nave a:hover::after,
+footer .nave a.ativo::after {
+    width: 100%;
+}
+
+
+footer .redes h3 {
+    text-align: center;
+    font-family: var(--font-principal);
+    font-size: 1.875em;
+    margin-bottom: 30px;
+}
+
+footer .redes div {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 55px;
+    justify-content: center;
+}
+
+footer .redes div img {
+    width: 50px;
+}
+
+footer .redes div img:hover{
+    transition: 0.2s;
+    scale: 1.05;
+    transform: translateY(-3px);
+    filter: drop-shadow(2px 2px 4px #b1b1b1) ;
+}
+
+footer .end {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .end h2 {
+    font-size: 2.5em;
+    font-family: var(--font-principal);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer .end p {
+    font-size: 1em;
+    text-align: center;
+}
+
+footer .end a {
+    color: #ffda33;
+    text-decoration: #ffda33 underline;
+    font-size: 1em;
+
+}
+
+footer section {
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+footer section p {
+    padding: 5px;
+}
+
+
+/* ************************************************************************************************************************************************************************************************************************** INICO PAGINA SOBRE ***********************************************************************************************/
+
+/* seção "Quem Somos" */
+.quem-somos {
+    padding: 100px 0 90 0;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e6eef8;
+    background: #0b1220;
+}
+
+/* temporario */
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+/* ---------- imagem esquerda ---------- */
+.quem-somos .container>div {
+    flex: 0 0 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quem-somos .container>div>div {
+    /* width: 100%;
+  max-width: 550px; */
+    width: 700px;
+    height: 450px;
+    border-radius: 5px;
+    padding: 4px;
+    background: linear-gradient(180deg, #ff6b6b 0%, #ff8a5c 25%, #ffd24d 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.5);
+    transition: transform .25s ease;
+    overflow: hidden;
+}
+
+.quem-somos .container>div>div:hover {
+    transform: translateY(-4px);
+}
+
+.quem-somos .container>div>div img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #111;
+}
+
+.quem-somos .container aside {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 750px;
+    /* texto grande sem quebrar */
+}
+
+.quem-somos .container aside h2 {
+    margin: 30px;
+    font-size: 60px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.quem-somos .container aside p {
+    font-size: 30px;
+}
+
+.quem-somos .container aside strong {
+    color: #747ce4;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* começo valores */
+.valores {
+    padding-block: 50px;
+    border: #0323683a solid 4px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e6eef8;
+    background: #0b1220;
+}
+
+.blue {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+}
+
+.valores .card {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+}
+
+.valores .card .face {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valores .card .face.face1 {
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.valores .card .face.face1 h2 {
+    color: #024eff;
+    margin-bottom: 5px;
+}
+
+.valores .card .face.face1 .content {
+    font-size: 1.2em;
+    padding: 0 0 1em 0;
+    font-weight: 500;
+}
+
+.valores .card .face.face1 .content p {
+    color: #8d8d8d;
+    margin-bottom: 10px;
+}
+
+.valores .card .face.face2 {
+    background: #111;
+    transition: 0.5s;
+}
+
+.valores .card:nth-child(1) .face.face2 {
+    background-image: url(../img/dev1.webp);
+    border-radius: 15px;
+    background-position: center;
+}
+
+.valores .card:nth-child(2) .face.face2 {
+    background-image: url(../img/dev3.webp);
+    border-radius: 15px;
+    background-position: center;
+}
+
+.valores .card:nth-child(3) .face.face2 {
+    background-image: url(../img/dev2.webp);
+    border-radius: 15px;
+    background-position: center;
+}
+
+.valores .card:hover .face.face2 {
+    height: 30px;
+    border-radius: 0 0 15px 15px;
+}
+
+.valores .card .face.face2 h2 {
+    font-size: 10em;
+    color: #042fee00;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px #281dbd;
+}
+
+.valores .card:hover .face.face2 h2 {
+    font-size: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+/* POR QUE NOS ESCOLHER INICIO */
+.pqescolher {
+    padding: 80px 40px;
+    text-align: center;
+    color: #e6eef8;
+    background: #0b1220;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: content-box;
+}
+
+.pqescolher .container {
+    flex-direction: column;
+}
+
+.pqescolher h2 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.pqescolher .container .descricao {
+    margin: 0 0 30px;
+    color: #cfd8e6;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+.pqescolher .bloco-escolha {
+    position: relative;
+    margin: 0 20px;
+    border-radius: 14px;
+    padding: 8px;
+    background: transparent;
+}
+
+.pqescolher .bloco-escolha::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 3px;
+    background: linear-gradient(90deg, #2fc7ff, #3fb5ff, #7a6bff, #2fc7ff);
+    background-size: 300% 300%;
+    z-index: 0;
+    animation: bordaMove 6s linear infinite;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes bordaMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* fundo interno (escuro) que cria o recuo entre a borda e os cards */
+.pqescolher .bloco-escolha-inner {
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    padding: 26px;
+    background: #060a14d9;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    /* align-items: start; */
+}
+
+
+.pqescolher .motivo {
+    position: relative;
+    border-radius: 12px;
+    padding: 28px 24px;
+    background: linear-gradient(180deg, #2147e6, #2343d9);
+    box-shadow: 0 10px 18px #0d121e8c;
+    color: #eaf2ff;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+
+.pqescolher .motivo::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 10px;
+    border: 6px solid #00000026;
+    /* faixa interna escura */
+    pointer-events: none;
+    box-shadow: inset 0 3px 0 #ffffff05;
+}
+
+.pqescolher .motivo h3 {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    z-index: 2;
+}
+
+
+.pqescolher .motivo p {
+    margin: 0;
+    z-index: 2;
+    color: #ebf5ffeb;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+.pqescolher .motivo:hover {
+    transform: translateY(-8px);
+    transition: transform .22s ease;
+    box-shadow: 0 18px 36px #060814a6;
+}

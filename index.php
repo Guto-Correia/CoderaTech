@@ -1,0 +1,241 @@
+
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$ok = 0;
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+
+try {
+
+    if (isset($_POST["email"])) {
+        //só entra aqui se prencher o form e clicar no butão
+
+        require 'vendor/phpmailer/Exception.php';
+        require 'vendor/phpmailer/PHPMailer.php';
+        require 'vendor/phpmailer/SMTP.php';
+
+
+        //Create an instance; passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $telefone = $_POST["telefone"];
+        $motivo = $_POST["motivo"];
+        $assunto = "E-mail do site XYZ Code";
+
+        //mostra as carc da var
+        // var_dump(value: $nome);
+        // var_dump(value: $email);
+        // var_dump(value: $telefone);
+        // var_dump(value: $motivo);
+        // var_dump(value: $mensagem);
+
+        // //Server settings
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'tipi05.360criativo.com.br';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'contato@tipi05.360criativo.com.br';                     //SMTP username
+        $mail->Password   = 'TIPI05**2025';                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //Recipients
+        $mail->setFrom('contato@tipi05.360criativo.com.br');
+        $mail->addAddress('correiaguto7@gmail.com');     //Add a recipient
+        // $mail->addAddress('ellen@example.com');               //Name is optional
+        // $mail->addReplyTo('info@example.com', 'Information');
+        // $mail->addCC('cc@example.com');
+        // $mail->addBCC('bcc@example.com');
+
+        //Attachments
+        // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = $assunto;
+        $mail->Body    = "
+        Nome: $nome <br>
+        E-mail: $email <br>
+        Telefone: $telefone <br>
+        Motivo: $motivo <br>
+        
+        ";
+
+        $mail->AltBody = "
+        Nome: $nome /n
+        E-mail: $email /n
+        Telefone: $telefone /n
+        Motivo: $motivo
+        ";
+
+        $mail->send();
+        // echo 'SUa mensagem foi um sucesso';
+        $ok = 1;
+    } //fim do if
+
+}catch (Exception $e) {
+    echo $nome . ", Não foi possivel o envio do e-mail: {$mail->ErrorInfo}";
+    $ok = 2;
+}
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+    <link rel="manifest" href="img/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/reset.css">
+
+
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- começo header -->
+    <?php require_once("conteudo/header.php") ?>
+    <main>
+
+        <!-- começo banner -->
+        <?php require_once("conteudo/banner.php") ?>
+
+        <!-- section projetos -->
+        <section class="projetos">
+            <div class="container">
+                <div>
+                    <h2>PROJETOS</h2>
+                    <ul>
+                        <li><a href="#" data-img="img/portifolio.webp">Marketing</a></li>
+                        <li><a href="#" data-img="img/frontend.webp">Front-End</a></li>
+                        <li><a href="#" data-img="img/backend.webp">Back-End</a></li>
+                        <li><a href="#" data-img="img/desenvolvimentoWeb.webp">Otimização</a></li>
+                        <li><a href="#" data-img="img/mobile.webp">Mobile</a></li>
+                    </ul>
+                </div>
+                <div class="containerImg">
+                    <img id="img-projeto" src="img/imgProjeto.webp" alt="Imagem do projeto">
+                </div>
+            </div>
+        </section>
+
+        <!-- section QUEM SOMOS -->
+        <section class="quemSomos">
+            <div class="container">
+                <div class="img">
+                    <img src="img/quemsomos.webp" alt="Quem Somos">
+                </div>
+                <div class="texto">
+                    <h2>QUEM SOMOS?</h2>
+                    <p>A CodEraTech é uma agência de desenvolvimento web Full Stack e Mobile. Unimos código, inovação e
+                        tecnologia para impulsionar a nova era digital. Transformamos ideias em soluções modernas,
+                        eficientes e escaláveis. Priorizamos performance, usabilidade e design de alta qualidade.
+                        CodEraTech:
+                    </p>
+                    <p>Conectando você ao futuro da tecnologia</p>
+                    <a href="contatoPg.php">Contate-nos</a>
+                </div>
+        </section>
+
+        <!-- section equipe -->
+            <section class="equipe">
+                <div>
+                    <h2>Conheça nossa equipe</h2>
+                    <h2>Abrindo caminhos para uma nova era</h2>
+                    <div>
+                        <div class="card">
+                            <div>
+                                <img src="img/guto.webp" alt="Imagem do Guto">
+                            </div>
+                            <h2>Guto</h2>
+                            <p>Desenvolvedor Back-end</p>
+                            <div class="redes">
+                                <a href=""><img src="img/whatsBlack.svg" alt="imagem do whatsapp"></a>
+                                <a href=""><img src="img/instaBlack.svg" alt="imagem do instagram"></a>
+                                <a href=""><img src="img/linkeBlack.svg" alt="imagem do linkedin"></a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="foto">
+                                <img src="img/livia.webp" alt="Imagem da Livia">
+                            </div>
+                            <h2>Livia</h2>
+                            <p>Desenvolvedora Back-end</p>
+                            <div class="redes">
+                                <a href=""><img src="img/whatsBlack.svg" alt="imagem do whatsapp"></a>
+                                <a href=""><img src="img/instaBlack.svg" alt="imagem do instagram"></a>
+                                <a href=""><img src="img/linkeBlack.svg" alt="imagem do linkedin"></a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="foto">
+                                <img src="img/lopes.webp" alt="Imagem do Lopes">
+                            </div>
+                            <h2>Lopes</h2>
+                            <p>Desenvolvedor Front-end</p>
+                            <div class="redes">
+                                <a href=""><img src="img/whatsBlack.svg" alt="imagem do whatsapp"></a>
+                                <a href=""><img src="img/instaBlack.svg" alt="imagem do instagram"></a>
+                                <a href=""><img src="img/linkeBlack.svg" alt="imagem do linkedin"></a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="foto">
+                                <img src="img/davi.webp" alt="Imagem do Davi">
+                            </div>
+                            <h2>Davi</h2>
+                            <p>Desenvolvedor Back-end</p>
+                            <div class="redes">
+                                <a href=""><img src="img/whatsBlack.svg" alt="imagem do whatsapp"></a>
+                                <a href=""><img src="img/instaBlack.svg" alt="imagem do instagram"></a>
+                                <a href=""><img src="img/linkeBlack.svg" alt="imagem do linkedin"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        <!-- começo contato -->
+        <?php require_once("conteudo/contato.php") ?>
+
+    </main>
+    <!-- começo footer -->
+    <?php require_once("conteudo/footer.php") ?>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+    <script src="js/animacao.js"></script>
+
+</body>
+
+</html>
