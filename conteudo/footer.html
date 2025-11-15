@@ -1,10 +1,10 @@
 <footer>
 
-            <?php 
+            <!-- <?php 
             // pagar o nome da página atual via url
             $pgAtual = basename(path: $_SERVER['REQUEST_URI']);
             // echo( $pgAtual );
-            ?>
+            ?> -->
 
             <div class="container">
 
@@ -12,19 +12,23 @@
                     <a href="index.html"><img src="img/logo.svg" alt="logo da coderatech"></a>
                 </div>
 
+                <!--  class=" <?= ($pgAtual == "index.php") ? 'ativo' : '' ?>"
+ class=" <?= ($pgAtual == "sobre.php") ? 'ativo' : '' ?>"
+ class=" <?= ($pgAtual == "equipe.php") ? '' : '' ?>"
+ class=" <?= ($pgAtual == "contato.php") ? 'ativo' : '' ?>" -->
                 <div class="nave">
                     <ul>
                         <li>
-                            <a href="index.php" class=" <?= ($pgAtual == "index.php") ? 'ativo' : '' ?>">Home</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="sobre.php" class=" <?= ($pgAtual == "sobre.php") ? 'ativo' : '' ?>">Sobre</a>
+                            <a href="sobre.html">Sobre</a>
                         </li>
                         <li>
-                            <a href="#" class=" <?= ($pgAtual == "equipe.php") ? '' : '' ?>">Equipe</a>
+                            <a href="#">Equipe</a>
                         </li>
                         <li>
-                            <a href="contatoPg.php" class=" <?= ($pgAtual == "contato.php") ? 'ativo' : '' ?>">Contato</a>
+                            <a href="contatoPg.html">Contato</a>
                         </li>
                     </ul>
                 </div>

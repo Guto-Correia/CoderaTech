@@ -1,0 +1,33 @@
+ <header class="topo">
+        <div class="container">
+
+           <!-- <?php 
+            // pagar o nome da página atual via url
+            $pgAtual = basename(path: $_SERVER['REQUEST_URI']);
+            // echo( $pgAtual );
+            ?> -->
+            <!--  class=" <?= ($pgAtual == "index.php") ? 'ativo' : '' ?>"
+ class=" <?= ($pgAtual == "sobre.php") ? 'ativo' : '' ?>"
+ class=" <?= ($pgAtual == "equipe.php") ? '' : '' ?>"
+  class=" <?= ($pgAtual == "contatoPg.php") ? 'ativo' : '' ?
+   class=" <?= ($pgAtual == "login.php") ? '' : '' ?>"
+    class=" <?= ($pgAtual == "cadastro.php") ? '' : '' ?>"
+   -->
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">Equipe</a></li>
+                    <li><a href="contatoPg.html">">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" id="logo">
+                <h1>Transformamos cliques em conexões</h1>
+            </a>
+            <ul>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Cadastre-se</a></li>
+            </ul>
+        </div>
+    </header>
