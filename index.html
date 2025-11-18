@@ -1,94 +1,5 @@
-
-<!-- <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-$ok = 0;
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
-
-
-try {
-
-    if (isset($_POST["email"])) {
-        //só entra aqui se prencher o form e clicar no butão
-
-        require 'vendor/phpmailer/Exception.php';
-        require 'vendor/phpmailer/PHPMailer.php';
-        require 'vendor/phpmailer/SMTP.php';
-
-
-        //Create an instance; passing `true` enables exceptions
-        $mail = new PHPMailer(true);
-
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $telefone = $_POST["telefone"];
-        $motivo = $_POST["motivo"];
-        $assunto = "E-mail do site XYZ Code";
-
-        //mostra as carc da var
-        // var_dump(value: $nome);
-        // var_dump(value: $email);
-        // var_dump(value: $telefone);
-        // var_dump(value: $motivo);
-        // var_dump(value: $mensagem);
-
-        // //Server settings
-        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'tipi05.360criativo.com.br';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'contato@tipi05.360criativo.com.br';                     //SMTP username
-        $mail->Password   = 'TIPI05**2025';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-        //Recipients
-        $mail->setFrom('contato@tipi05.360criativo.com.br');
-        $mail->addAddress('correiaguto7@gmail.com');     //Add a recipient
-        // $mail->addAddress('ellen@example.com');               //Name is optional
-        // $mail->addReplyTo('info@example.com', 'Information');
-        // $mail->addCC('cc@example.com');
-        // $mail->addBCC('bcc@example.com');
-
-        //Attachments
-        // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = $assunto;
-        $mail->Body    = "
-        Nome: $nome <br>
-        E-mail: $email <br>
-        Telefone: $telefone <br>
-        Motivo: $motivo <br>
-        
-        ";
-
-        $mail->AltBody = "
-        Nome: $nome /n
-        E-mail: $email /n
-        Telefone: $telefone /n
-        Motivo: $motivo
-        ";
-
-        $mail->send();
-        // echo 'SUa mensagem foi um sucesso';
-        $ok = 1;
-    } //fim do if
-
-}catch (Exception $e) {
-    echo $nome . ", Não foi possivel o envio do e-mail: {$mail->ErrorInfo}";
-    $ok = 2;
-}
-
-?> -->
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-Br">
 
 <head>
     <link rel="apple-touch-icon" sizes="57x57" href="img/icon/apple-icon-57x57.png">
@@ -121,11 +32,39 @@ try {
 
 <body>
     <!-- começo header -->
-    <!-- <?php require_once("conteudo/header.php") ?> -->
+     <header class="topo">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">serviços</a></li>
+                    <li><a href="contatoPg.html">">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" id="logo">
+                <h1>Transformamos cliques em conexões</h1>
+            </a>
+            <ul>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Cadastre-se</a></li>
+            </ul>
+        </div>
+    </header> 
+
     <main>
 
         <!-- começo banner -->
-        <!-- <?php require_once("conteudo/banner.php") ?> -->
+        <section class="banner">
+            <h2>Transformamos cliques em conexões</h2>
+            <h3>Seu negocio pronto para era tech </h3>
+            <div class="carrossel">
+                <div><img src="img/primeira-carrossel.webp" alt="imagens ilustrativas dos sites da empresa"></div>
+                <div><img src="img/segunda-carrossel.webp" alt="imagens ilustrativas dos sites da empresa"></div>
+                <div><img src="img/terceira-carrossel.webp" alt="imagens ilustrativas dos sites da empresa"></div>
+                <div><img src="img/segunda-carrossel.webp" alt="imagens ilustrativas dos sites da empresa"></div>
+            </div>
+        </section>
 
         <!-- section projetos -->
         <section class="projetos">
@@ -225,11 +164,99 @@ phpg/livia.webp" alt="Imagem da Livia">
             </section>
 
         <!-- começo contato -->
-        <!-- <?php require_once("conteudo/contato.php") ?> -->
+        <section class="contato">
+            <div class="container">
+                
+                <div>
+                    <h2>ENTRE EM CONTATO CONOSCO</h2>
+                    <p>Pronto para destacar sua empresa nessa <span>era digital?</span></p>
+                    <p>Fale conosco e crie um site do jeitinho que sua marcar merece!</p>
+                </div>
+
+                <form method="POST">
+                    <div>
+                        <div>
+                            <label for="nome">Nome completo</label>
+                            <input id="nome" name="nome" type="text" autocomplete="name" required>
+                        </div>
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                    </div>
+                
+                    <label for="telefone">Telefone</label>
+                    <input id="telefone" name="telefone" type="tel" autocomplete="tel">
+                    
+                    <label for="motivo">Conte-nos um pouco sobre sua ideia</label>
+                    <textarea id="motivo" name="motivo" maxlength="1000" required></textarea>
+
+                    <button type="submit">ENVIAR</button>   
+                </form>
+                
+            </div>
+        </section>
 
     </main>
     <!-- começo footer -->
-    <!-- <?php require_once("conteudo/footer.php") ?> -->
+    <footer>
+
+            <div class="container">
+
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo.svg" alt="logo da coderatech"></a>
+                </div>
+
+                <div class="nave">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="sobre.html">Sobre</a>
+                        </li>
+                        <li>
+                            <a href="#">Equipe</a>
+                        </li>
+                        <li>
+                            <a href="contatoPg.html">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="redes">
+                    <h3>Siga-nos nas redes sociais</h3>
+                    <div>
+                        <a href="#">
+                        <img src="img/face.png" alt="link para o nosso facebook">
+                        </a>
+                        <a href="#">
+                        <img src="img/insta.png" alt="link para o nosso instagran">
+                        </a>
+                        <a href="#">
+                        <img src="img/linkedin.png" alt="link para o nosso linkedin">
+                        </a>
+                        <a href="#">
+                        <img src="img/github.png" alt="link para o nosso github">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="end">
+                <h2>CONTATE-NOS</h2>
+                <p>Av Marechal tito, 1500</p>
+                <p>São Miguel Paulista - São Paulo - SP</p>
+                <a href="#">coderatech@smpsistema.com.br</a>
+                <a href="#">(11) 99999-9999</a>
+                </div>
+                                
+            </div>
+            <div class="container">
+                <p>Copyright©</p>
+                <p>Desenvolvido por CODERATECH</p>
+            </div>
+          
+    </footer>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
