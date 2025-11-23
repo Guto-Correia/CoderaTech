@@ -1,27 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Quantico:wght@400;700&display=swap');
 
 .quantico-regular {
-  font-family: "Quantico", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .quantico-bold {
-  font-family: "Quantico", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "Quantico", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
 .montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 html {
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 *,
@@ -37,20 +38,22 @@ html {
     --font-size: 16px
 }
 
-h2,h3,h4,h5,h6{
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-principal);
 }
 
-a,p{
+p {
     font-family: var(--font-menu);
 }
 
 a {
     text-decoration: none;
+    font-family: var(--font-menu);
 }
-
-
-/*  CONTEUDO ACIMA É IMPORTANTISSIMO TER EM TODOS */
 
 .container {
     display: flex;
@@ -60,59 +63,123 @@ a {
     margin: 0 auto;
     justify-content: space-between;
 }
+/*  CONTEUDO ACIMA É IMPORTANTISSIMO TER EM TODOS */
 
+/* começo header */
 .topo {
     background-color: #000000;
-    position: relative;
-    padding-block: 14px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.topo .container{
+    gap: 120px;
+    justify-content: space-evenly;
+}
+
+.topo .container>a:first-child{
+    display: block;
+    background-image: url(../img/logo.svg);
+    height: 90px; 
+    width: 350px;   /*aumenta a logo e continuar com ela centralizada*/
+    background-repeat: no-repeat;
+}
+
+.topo h1 {
+    text-indent: -9999px; /* empurra o texto pra fora da tela */
 }
 
 .topo ul {
     display: flex;
     gap: 40px;
-    /* as primeiras duas cores tem que ser as mesmas dos fundo do elemento,as duas finais são as da borda*/
-    background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
-        linear-gradient(to right, #4b57a0, #00c2ff) border-box;
-    border: 2px solid transparent;
-    /* declara que é transparente */
-    border-radius: 17px;
     align-items: center;
 }
 
 .topo ul a {
     font-family: var(--font-principal);
-    font-size: 25px;
+    font-size: clamp(0.8rem, 1.4vw, 1.5625rem);
     color: #fbfbfb;
-    text-decoration: none;
     display: block;
     padding: 11.5px;
-    border-radius: 15px;
+    position: relative;
+    z-index: 5;
 }
 
 .topo ul a:hover {
-    color: #000000;
-    background-color: #9ddaef;
+    color: #9ddaef;
+    text-shadow: 0 0 1px #9ddaef,0 0 5px #9ddaef;
 }
 
 .topo ul .ativo{
-    color: #000000;
-    background-color: #9ddaef;
+    color: #9ddaef;
 }
 
-.topo #logo{
-    transform: translatex(-50%);
-    left: 50%;
+.topo ul .ativo::after{
+    content: "";
     position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #9ddaef;
+    box-shadow: 0 0 10px #9ddaef;
 }
 
-/* DEPOIS TENHO QUE CENTRALIZAR SEM O POSITION */
-.topo h1 {
-    text-indent: -9999px;
-    /* empurra o texto pra fora da tela */
-    background-image: url(../img/logo.svg);
-    height: 60px;
-    width: 300px;
-    background-repeat: no-repeat;
+/* efeito da barrinha  */
+.topo ul a::after{
+    content: "";
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+    height: 4px;
+    width: 0%;
+    background-color: #9ddaef;
+    box-shadow: 0 0 10px #9ddaef;
+    transition: all 0.3s ease;
+}
+
+.topo ul a:hover::after{
+    content: "";
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+    height: 4px;
+    width: 120%;
+    background-color: #9ddaef;
+    box-shadow: 0 0 10px #9ddaef;
+}
+
+/* efeito do degrade */
+.topo ul a::before{
+    content: "";
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+    height: 0%;
+    width: 100%;
+    background-image: linear-gradient(360deg,#9ddaef36 10%,#000 20%,#000 80%);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.topo ul a:hover::before{
+    content: "";
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+    height: 100%;
+    width: 120%;
+    background-image: linear-gradient(360deg,#9ddaef36,#000);
+}
+
+
+
+
+.topo .container img{
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
 }
 
 /* *******************     começo banner ********************************** */
