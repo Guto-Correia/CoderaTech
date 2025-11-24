@@ -38,7 +38,11 @@ html {
     --font-size: 16px
 }
 
-h2,h3,h4,h5,h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-principal);
 }
 
@@ -61,8 +65,7 @@ a {
 }
 /*  CONTEUDO ACIMA É IMPORTANTISSIMO TER EM TODOS */
 
-/*  MEDIAS QUERYS*/
-
+    /*  MEDIAS QUERYS*/
 @media (max-width: 800px) {
     .topo nav{
         display: none;
@@ -200,13 +203,13 @@ a {
 
 .banner h2 {
     font-weight: bold;
-    font-size: 3em;
+    font-size: clamp(1.6rem, 2.6vw, 3rem);
     text-align: center;
     margin: 60px 0 40px 0;
 }
 
 .banner h3 {
-    font-size: 2.25em;
+    font-size: clamp(1.4rem, 1.9vw, 2.25rem);
     text-align: center;
     margin-bottom: 30px;
 }
@@ -216,17 +219,17 @@ a {
     padding: 0 10px 0 50px;
 }
 
-.banner .slick-slide{
-  opacity: 0.5;
-  transform: scale(0.85);
-  transition: all 0.7s ease;
-  margin: 10px 30px;
+.banner .slick-slide {
+    opacity: 0.5;
+    transform: scale(0.85);
+    transition: all 0.7s ease;
+    margin: 10px 30px;
 }
 
 
-.banner .slick-center{
-  opacity: 1;
-  transform: scale(1.05);
+.banner .slick-center {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .banner img {
@@ -235,7 +238,7 @@ a {
     border: 2px solid transparent;
     border-radius: 15px;
     display: block;
-  width: 100%;
+    width: 100%;
 }
 
 /* setas do carrossel */
@@ -287,18 +290,18 @@ a {
 .projetos .container>div h2 {
     margin-bottom: 90px;
     margin-top: 90px;
-    font-size: 90px;
+    font-size: clamp(2.8rem, 4.7vw, 5.625rem);
     font-weight: bold;
 }
 
 .projetos .container div ul li a {
     background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
-    linear-gradient(to right, #d24e3d, #333333) border-box;
+        linear-gradient(to right, #d24e3d, #333333) border-box;
     border: 4px solid transparent;
     border-radius: 15px;
     padding: 10px 15px;
     margin: 15px 0;
-    font-size: 42px;
+    font-size: clamp(1.5rem, 2.2vw, 2.625rem);
     display: block;
     color: #fbfbfb;
 
@@ -309,38 +312,41 @@ a {
 .projetos .container div ul li a:hover {
     color: #000000;
     background: linear-gradient(to right, #9ddaef, #9ddaef) padding-box,
-    linear-gradient(to right, #d24e3d, #333333) border-box;
+        linear-gradient(to right, #d24e3d, #333333) border-box;
     /* caaso o hover não seja em degrade,coloque as mesmas duas cores no padding-box */
 }
 
 @keyframes borderColorShift {
-  
-  25% {
-    background-position: 25% 50%;
-  }
-  50% {
-    background-position: 50% 75%;
-  }
-  75% {
-    background-position: 75% 100%;
-  }
-  100% {
-    background-position: 0% 25%;
-  }
+
+    25% {
+        background-position: 25% 50%;
+    }
+
+    50% {
+        background-position: 50% 75%;
+    }
+
+    75% {
+        background-position: 75% 100%;
+    }
+
+    100% {
+        background-position: 0% 25%;
+    }
 }
 
-.projetos .container .containerImg{
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 640px;
-  width: 640px;
-  overflow: hidden;
+.projetos .container .containerImg {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 640px;
+    width: 640px;
+    overflow: hidden;
 }
 
 .projetos .container img {
     background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
-        linear-gradient(to right , #d24e3d,#d24e3d, #333333) border-box;
+        linear-gradient(to right, #d24e3d, #d24e3d, #333333) border-box;
     border: 5px solid transparent;
     height: 100%;
     position: absolute;
@@ -349,25 +355,28 @@ a {
     opacity: 1;
     transition: opacity 0.4s ease;
 
-      background-size: 400% 100%;
-  animation: borderColorShift 4s ease infinite;
-  
+    background-size: 400% 100%;
+    animation: borderColorShift 4s ease infinite;
+
 }
 
 @keyframes borderColorShift {
-  
-  25% {
-    background-position: 25% 50%;
-  }
-  50% {
-    background-position: 50% 75%;
-  }
-  75% {
-    background-position: 75% 100%;
-  }
-  100% {
-    background-position: 0% 25%;
-  }
+
+    25% {
+        background-position: 25% 50%;
+    }
+
+    50% {
+        background-position: 50% 75%;
+    }
+
+    75% {
+        background-position: 75% 100%;
+    }
+
+    100% {
+        background-position: 0% 25%;
+    }
 }
 
 .projetos .container img.fade {
@@ -395,6 +404,11 @@ a {
 }
 
 .quemSomos img {
+    margin: 70px auto 30px auto;
+    max-height: 529px; 
+    width: 100%;
+    height: auto;
+    max-width: 520px;
     margin: 70px 0 30px 0;
 }
 
@@ -407,12 +421,12 @@ a {
 
 .quemSomos .container .texto h2 {
     font-weight: bold;
-    font-size: 3.75em;
+    font-size: clamp(2rem, 3.2vw, 3.75rem);
     margin: 45px 0 60px 0;
 }
 
 .quemSomos .container .texto p {
-    font-size: 1.875em;
+    font-size: clamp(1rem, 1.6vw, 1.875rem);
     line-height: 1.4em;
     text-indent: 40px;
     text-align: center;
@@ -424,7 +438,7 @@ a {
 }
 
 .quemSomos .container .texto a {
-    font-size: 36px;
+    font-size: clamp(1rem,1.9vw,2.25rem);
     color: #020816;
     display: block;
     padding: 12px 32px;
@@ -440,7 +454,7 @@ a {
 .quemSomos .container .texto a:hover {
     color: #ccff33;
     background: linear-gradient(to right, #000033, #000033) padding-box,
-     linear-gradient(to right, #cc6633, #ccff33) border-box;
+        linear-gradient(to right, #cc6633, #ccff33) border-box;
 }
 
 /* *******************     começo equipe ********************************** */
@@ -465,7 +479,7 @@ a {
     color: white;
     text-align: center;
     margin-bottom: 30px;
-    font-size: 2.5em;
+    font-size: clamp(1.75rem,2.2vw,2.5rem);
 }
 
 .equipe>div>h2:nth-child(2) {
@@ -505,14 +519,14 @@ a {
 }
 
 .equipe .card h2 {
-    font-size: 2.5em;
+    font-size: clamp(1.75rem,3.2vw,2.5rem);
     text-align: center;
     color: #f8fafc;
     margin: 10px 0px 20px 0px;
 }
 
 .equipe .card p {
-    font-size: 1.3em;
+    font-size: clamp(0.875rem,1.2vw,1.3rem);
     color: #c6cacf;
     text-align: center;
 }
@@ -568,12 +582,12 @@ a {
 
 .contato .container div h2 {
     margin-block: 50px 70px;
-    font-size: 3.4375em;
+    font-size: clamp(1.875rem,3.1vw,3.437rem);
 }
 
 .contato .container div p {
     margin-bottom: 40px;
-    font-size: 1.5625em;
+    font-size: clamp(1.225rem,1.4vw,1.562rem);
     font-weight: bold;
 }
 
@@ -602,7 +616,7 @@ a {
     font-family: sans-serif;
     /* Tem que arrumar todas as fontes*/
     /* e padronizar os tamanhos de fontes,em todas as sections*/
-    font-size: 30px;
+    font-size: clamp(1.5rem,1.7vw,1.875rem);
     padding: 15px 0 20px 15px;
     font-weight: 300;
 }
@@ -636,7 +650,7 @@ a {
     background-color: #1F2937;
     border-radius: 5px;
     padding: 5px 60px;
-    font-size: 25px;
+    font-size: clamp(1.25rem,1.4vw,1.562rem);
     font-family: var(--font-principal);
     margin-top: 15px;
     border: 2px solid #5a8ea0;
@@ -659,7 +673,7 @@ footer {
 }
 
 footer .container {
-    gap: 10em;
+    column-gap: clamp(1rem,5vw,10rem);
     justify-content: space-evenly;
 }
 
@@ -684,7 +698,7 @@ footer .nave ul {
 
 footer .nave a {
     position: relative;
-    font-size: 1.5625em;
+    font-size: clamp(1rem,1.4vw,1.5625rem);
     color: #fbfbfb;
 }
 
@@ -692,7 +706,7 @@ footer .nave a:hover {
     color: #9ddaef;
 }
 
-footer .nave .ativo{
+footer .nave .ativo {
     color: #9ddaef;
 }
 
@@ -717,7 +731,7 @@ footer .nave a.ativo::after {
 
 footer .redes h3 {
     text-align: center;
-    font-size: 1.875em;
+    font-size: clamp(1.5rem,1.7vw,1.875rem);
     margin-bottom: 30px;
 }
 
@@ -732,11 +746,11 @@ footer .redes div img {
     width: 50px;
 }
 
-footer .redes div img:hover{
+footer .redes div img:hover {
     transition: 0.2s;
     scale: 1.05;
     transform: translateY(-3px);
-    filter: drop-shadow(2px 2px 4px #b1b1b1) ;
+    filter: drop-shadow(2px 2px 4px #b1b1b1);
 }
 
 footer .end {
@@ -747,20 +761,20 @@ footer .end {
 }
 
 footer .end h2 {
-    font-size: 2.5em;
+    font-size: clamp(1.5rem,2.2vw,2.5rem);
     text-align: center;
     margin-bottom: 10px;
 }
 
 footer .end p {
-    font-size: 1em;
+    font-size: clamp(0.875rem,0.9vw,1rem);
     text-align: center;
 }
 
 footer .end a {
     color: #ffda33;
     text-decoration: #ffda33 underline;
-    font-size: 1em;
+    font-size: clamp(0.875rem,0.9vw,1rem);
 
 }
 
@@ -845,30 +859,19 @@ footer section p {
 
 .quem-somos .container aside h2 {
     margin: 30px;
-    font-size: 60px;
+    font-size: clamp(1.9rem,3.3vw,3.75rem);
     text-align: center;
     color: #ffffff;
 }
 
 .quem-somos .container aside p {
-    font-size: 30px;
+    font-size: clamp(1.4rem,1.7vw,1.875rem);
 }
 
 .quem-somos .container aside strong {
     color: #747ce4;
     font-weight: 600;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* começo valores */
 .valores {
@@ -880,7 +883,8 @@ footer section p {
 }
 
 .blue {
-    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 15px;
@@ -991,7 +995,7 @@ footer section p {
 
 .pqescolher h2 {
     margin: 0 0 8px 0;
-    font-size: 28px;
+    font-size: clamp(1.875rem,2.2vw,2.5rem);
     letter-spacing: 1px;
     font-size: 2.5em;
     text-transform: uppercase;
@@ -1000,7 +1004,7 @@ footer section p {
 .pqescolher .container .descricao {
     margin: 0 0 30px;
     color: #cfd8e6;
-    font-size: 20px;
+    font-size: clamp(0.875rem,1.2vw,1.25rem);
     line-height: 1.6;
 }
 
@@ -1051,14 +1055,12 @@ footer section p {
 /* fundo interno (escuro) que cria o recuo entre a borda e os cards */
 .pqescolher .bloco-escolha-inner {
     position: relative;
-    z-index: 1;
     border-radius: 10px;
     padding: 26px;
     background: #060a14d9;
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(3, 1fr);
-    /* align-items: start; */
 }
 
 
@@ -1067,13 +1069,7 @@ footer section p {
     border-radius: 12px;
     padding: 28px 24px;
     background: linear-gradient(180deg, #2147e6, #2343d9);
-    box-shadow: 0 10px 18px #0d121e8c;
-    color: #eaf2ff;
     min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow: hidden;
 }
 
 
