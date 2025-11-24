@@ -38,11 +38,7 @@ html {
     --font-size: 16px
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2,h3,h4,h5,h6 {
     font-family: var(--font-principal);
 }
 
@@ -64,6 +60,17 @@ a {
     justify-content: space-between;
 }
 /*  CONTEUDO ACIMA É IMPORTANTISSIMO TER EM TODOS */
+
+/*  MEDIAS QUERYS*/
+
+@media (max-width: 800px) {
+    .topo nav{
+        display: none;
+    }
+    .topo .container img{
+        display: none;
+    }
+}
 
 /* começo header */
 .topo {
@@ -192,7 +199,6 @@ a {
 }
 
 .banner h2 {
-    font-family: var(--font-principal);
     font-weight: bold;
     font-size: 3em;
     text-align: center;
@@ -200,7 +206,6 @@ a {
 }
 
 .banner h3 {
-    font-family: var(--font-principal);
     font-size: 2.25em;
     text-align: center;
     margin-bottom: 30px;
@@ -267,7 +272,6 @@ a {
     background-color: #0f172a;
     color: #fbfbfb;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .projetos .container {
@@ -281,7 +285,6 @@ a {
 }
 
 .projetos .container>div h2 {
-    font-family: var(--font-principal);
     margin-bottom: 90px;
     margin-top: 90px;
     font-size: 90px;
@@ -289,7 +292,6 @@ a {
 }
 
 .projetos .container div ul li a {
-    font-family: var(--font-menu);
     background: linear-gradient(to right, #0f172a, #0f172a) padding-box,
     linear-gradient(to right, #d24e3d, #333333) border-box;
     border: 4px solid transparent;
@@ -379,7 +381,6 @@ a {
 .quemSomos {
     background: #000033;
     padding-block: 50px;
-    font-family: Arial, Helvetica, sans-serif;
     color: #fff;
 }
 
@@ -405,7 +406,6 @@ a {
 }
 
 .quemSomos .container .texto h2 {
-    font-family: var(--font-principal);
     font-weight: bold;
     font-size: 3.75em;
     margin: 45px 0 60px 0;
@@ -416,7 +416,6 @@ a {
     line-height: 1.4em;
     text-indent: 40px;
     text-align: center;
-    font-family: var(--font-menu);
 }
 
 .quemSomos .container .texto p:nth-child(3) {
@@ -467,7 +466,6 @@ a {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.5em;
-    font-family: var(--font-principal);
 }
 
 .equipe>div>h2:nth-child(2) {
@@ -556,7 +554,6 @@ a {
     background-color: #1f2937;
     padding: 50px 0 70px 0;
     color: #fbfbfb;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .contato .container {
@@ -572,7 +569,6 @@ a {
 .contato .container div h2 {
     margin-block: 50px 70px;
     font-size: 3.4375em;
-    font-family: var(--font-principal);
 }
 
 .contato .container div p {
@@ -690,7 +686,6 @@ footer .nave a {
     position: relative;
     font-size: 1.5625em;
     color: #fbfbfb;
-    font-family: sans-serif;
 }
 
 footer .nave a:hover {
@@ -722,7 +717,6 @@ footer .nave a.ativo::after {
 
 footer .redes h3 {
     text-align: center;
-    font-family: var(--font-principal);
     font-size: 1.875em;
     margin-bottom: 30px;
 }
@@ -746,7 +740,6 @@ footer .redes div img:hover{
 }
 
 footer .end {
-    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -755,7 +748,6 @@ footer .end {
 
 footer .end h2 {
     font-size: 2.5em;
-    font-family: var(--font-principal);
     text-align: center;
     margin-bottom: 10px;
 }
@@ -794,7 +786,6 @@ footer section p {
     gap: 60px;
     align-items: center;
     justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
     color: #e6eef8;
     background: #0b1220;
 }
@@ -884,7 +875,6 @@ footer section p {
     padding-block: 50px;
     border: #0323683a solid 4px;
     border-radius: 5px;
-    font-family: Arial, Helvetica, sans-serif;
     color: #e6eef8;
     background: #0b1220;
 }
@@ -992,7 +982,6 @@ footer section p {
     text-align: center;
     color: #e6eef8;
     background: #0b1220;
-    font-family: Arial, Helvetica, sans-serif;
     box-sizing: content-box;
 }
 
